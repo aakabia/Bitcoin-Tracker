@@ -1,5 +1,6 @@
 import requests
 import os
+# cSpell:ignore dotenv 
 from dotenv import load_dotenv
 import smtplib
 from datetime import datetime
@@ -20,18 +21,19 @@ def send_Email_To_SMS(body:str)-> None:
     None
     """
 
-
+   
 
 
     EMAIL_ADDRESS = os.getenv("EMAIL")  # Your email
     EMAIL_PASSWORD = os.getenv("APP_PASSWORD")  # Your email password
 
+    # cSpell:ignore tmomail
     # T-Mobile SMS gateway
     TO_NUMBER = os.getenv("PHONE_NUM") + "@tmomail.net"
 
     SMTP_SERVER = "smtp.gmail.com"
     SMTP_PORT = 587
-    # creater server and port 
+    # create server and port 
 
     server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
     server.starttls()
@@ -125,7 +127,7 @@ def get_Coin_Prices(symbol:str)-> dict:
         print("Unexpected response format: No data found.") 
         print(f"Error {response.status_code}: {response.text}") 
 
-    # error handeling and checking if the request is successful
+    # error handling and checking if the request is successful
 
 def create_Body(*args:dict)->str:
 
@@ -164,7 +166,7 @@ def create_Body(*args:dict)->str:
         for coin in args
     ]
 
-    # Above uses List comprehension to create our list of coin discriptions.
+    # Above uses List comprehension to create our list of coin descriptions.
 
     final_message = "\n\n".join(coin_Descriptions)
 
@@ -193,8 +195,10 @@ def app()->None:
     except Exception as e:
         print(f"Error: {e}")
 
-    # try except block for better error handeling when running script
+    # try except block for better error handling when running script
 
+
+print("hello World")
 
 
 if __name__ == "__main__":
