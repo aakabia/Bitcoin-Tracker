@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/email.css" />
+
+    <title>Responsive Email Template</title>
+    <style>
+        
+      @media screen and (max-width: 600px) {
+        .content {
+          width: 100% !important;
+          display: block !important;
+          padding: 10px !important;
+        }
+        .header,
+        .body,
+        .footer {
+          padding: 20px !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="font-family: &quot;Poppins&quot;, Arial, sans-serif">
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <tr>
+        <td style="text-align: center; padding: 20px">
+          <table
+            width="500"
+            cellpadding="0"
+            cellspacing="0"
+            class="content"
+            style="
+              border-collapse: collapse;
+              border: 3px solid #cccccc;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <tr>
+              <td
+                class="header"
+                style="
+                  background-color: #345c72;
+                  padding: 30px;
+                  text-align: center;
+                  color: white;
+                  font-size: 24px;
+                "
+              >
+                Coin Data for {{data.symbol}}
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                class="body"
+                style="
+                  padding: 40px;
+                  text-align: left;
+                  font-size: 16px;
+                  line-height: 1.6;
+                "
+              >
+                Hello, Viewer! <br /><br />
+            The current price of {{ data.symbol }} is approximately {{ data.coin_Price }} USD.
+
+                <br /><br />
+            The volume change in the last 24hrs is {{ data.coin_Volume_Change_24h }} .
+
+                <br /><br />
+            The percent change in the last hour is {{ data.coin_Percent_Change_1h}} .
+
+
+                <br /><br />
+            The market cap dominance is {{ data.coin_Market_Cap_Dominance }} .
+
+
+                <br /><br />
+            This was sent on {{ data.last_Updated_Time_Stamp }} 
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                class="footer"
+                style="
+                  background-color: #333333;
+                  padding: 30px;
+                  text-align: center;
+                  color: white;
+                  font-size: 14px;
+                "
+              >
+                Copyright &copy; 2024 | Your brand name
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
